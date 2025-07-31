@@ -1,23 +1,48 @@
-<!DOCTYPE html>
-<!-- saved from url=(0022)http://localhost:8000/ -->
-<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<?php
+// Get the requested URL (path)
+$request_uri = $_SERVER['REQUEST_URI'];
+
+// Start buffering the output (optional, for cleaner output)
+ob_start();
+
+// Default title for the page
+$title = "PT. Arya Cakra Mahkota";
+
+// Decide what to include based on the route
+switch ($request_uri) {
+    case '/':
+        $title = "PT. Arya Cakra Mahkota - Home";
+        break;
     
+    case '/about':
+        $title = "PT. Arya Cakra Mahkota - About";
+        break;
+
+    case '/produk':
+        $title = "PT. Arya Cakra Mahkota - Produk";
+        break;
+
+    case '/contact':
+        $title = "PT. Arya Cakra Mahkota - Contact";
+        break;
+
+    default:
+        $title = "404 - Page Not Found";
+        break;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT. Arya Cakra Mahkota</title>
-  
+    <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="./index_files/style.css">
+    <link rel="stylesheet" href="./index_files/header.css"> <!-- Link ke CSS header -->
 </head>
 <body>
-   
-
-
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PT. Arya Cakra Mahkota</title>
-    <link rel="stylesheet" href="./index_files/header.css"> <!-- Link ke CSS header -->
-    <!-- Jangan tambahkan header.css di index.php, cukup di sini -->
-
-
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
@@ -26,9 +51,10 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="http://localhost:8000/index.php">Beranda</a></li>
-                    <li><a href="http://localhost:8000/produk.php">Katalog</a></li>
-                    <li><a href="http://localhost:8000/about.php">Tentang Kami</a></li>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/produk">Katalog</a></li>
+                    <li><a href="/about">Tentang Kami</a></li>
+                    <li><a href="/contact">Hubungi Kami</a></li>
                 </ul>
             </nav>
             <div class="contact-btn">
@@ -39,7 +65,8 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Only for Home Page) -->
+    <?php if ($request_uri == '/'): ?>
     <section class="hero">
         <div class="hero-background">
             <img src="./index_files/img (2).png" alt="Background Image">
@@ -49,21 +76,25 @@
             <p>PT. Arya Cakra Mahkota telah dipercaya dalam berbagai produk berkualitas, berfokus pada strategi di Jakarta Pusat.</p>
             <div class="hero-buttons">
                 <a href="tel:+62123456789" class="btn-hubungi">Hubungi Kami</a>
-                <a href="http://localhost:8000/produk.php" class="btn-lebih-lanjut">Pelajari Lebih Lanjut</a>
+                <a href="/produk" class="btn-lebih-lanjut">Pelajari Lebih Lanjut</a>
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
-    <!-- Tentang Kami Section -->
+    <!-- Tentang Kami Section (Only for About Page) -->
+    <?php if ($request_uri == '/about'): ?>
     <section class="tentang-kami">
         <div class="container">
             <h2>Tentang PT. Arya Cakra Mahkota</h2>
             <p>PT. Arya Cakra Mahkota adalah perusahaan yang bergerak di bidang jasa dan perdagangan, berlokasi di Hotel Bintang Wisata Mandiri Building, Lantai 1, Serio Jl. Raden Saleh, Cikini, Jakarta Pusat. Sejak awal berdiri, kami berkomitmen untuk memberikan layanan terbaik dan produk berkualitas tinggi kepada pelanggan di berbagai sektor industri.</p>
-            <a href="http://localhost:8000/about.php" class="btn-lebih-lanjut">Lihat Tentang Kami</a>
+            <a href="/about" class="btn-lebih-lanjut">Lihat Tentang Kami</a>
         </div>
     </section>
+    <?php endif; ?>
 
-    <!-- Katalog Section -->
+    <!-- Katalog Section (Only for Produk Page) -->
+    <?php if ($request_uri == '/produk'): ?>
     <section class="catalog">
         <div class="container">
             <h2>Katalog Produk</h2>
@@ -73,67 +104,82 @@
                     <img src="./index_files/img produk 1.png" alt="Heavy Equipment &amp; Parts">
                     <h3>Heavy Equipment &amp; Parts</h3>
                     <p>Ropes, chains, hoists, and other industrial equipment for construction and mining projects.</p>
-                    <a href="http://localhost:8000/produk.php" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
+                    <a href="/produk" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
                 </div>
                 <div class="catalog-item">
                     <img src="./index_files/img produk 2.png" alt="Safety &amp; Equipment">
                     <h3>Safety &amp; Equipment</h3>
                     <p>Perlengkapan keselamatan seperti helm, pelindung tubuh, dan perlengkapan lainnya untuk proteksi di tempat kerja.</p>
-                    <a href="http://localhost:8000/produk.php" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
+                    <a href="/produk" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
                 </div>
                 <div class="catalog-item">
                     <img src="./index_files/img produk 3.png" alt="Pipe &amp; Fitting / Plates">
                     <h3>Pipe &amp; Fitting / Plates</h3>
                     <p>Beragam pipa, fitting, dan plat yang digunakan untuk instalasi dan konstruksi industri.</p>
-                    <a href="http://localhost:8000/produk.php" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
+                    <a href="/produk" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
                 </div>
             </div>
         </div>
     </section>
+    <?php endif; ?>
 
-    <!-- Hubungi Kami Section -->
+    <!-- Hubungi Kami Section (Only for Contact Page) -->
+    <?php if ($request_uri == '/contact'): ?>
     <section class="contact-us">
-    <div class="container">
-        <div class="contact-us-content">
-            <h2>Hubungi Kami</h2>
-            <p>Kami siap membantu Anda. Jangan ragu untuk menghubungi kami untuk informasi produk, konsultasi, atau penawaran kerja sama.</p>
-            <div class="contact-details">
-                <p><strong>Alamat Kantor:</strong> Hotel Bintang Wisata Mandiri Building 1st Floor, Seroja – Jl. Raden Saleh, Cikini, Jakarta Pusat</p>
-                <p><strong>Telepon:</strong> 021-3122-2566</p>
-                <p><strong>Handphone:</strong> 0811-8129-6000</p>
-                <p><strong>Email:</strong> <a href="mailto:aryacakramahkota@gmail.com">aryacakramahkota@gmail.com</a></p>
+        <div class="container">
+            <div class="contact-us-content">
+                <h2>Hubungi Kami</h2>
+                <p>Kami siap membantu Anda. Jangan ragu untuk menghubungi kami untuk informasi produk, konsultasi, atau penawaran kerja sama.</p>
+                <div class="contact-details">
+                    <p><strong>Alamat Kantor:</strong> Hotel Bintang Wisata Mandiri Building 1st Floor, Seroja – Jl. Raden Saleh, Cikini, Jakarta Pusat</p>
+                    <p><strong>Telepon:</strong> 021-3122-2566</p>
+                    <p><strong>Handphone:</strong> 0811-8129-6000</p>
+                    <p><strong>Email:</strong> <a href="mailto:aryacakramahkota@gmail.com">aryacakramahkota@gmail.com</a></p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
- <!-- Menyertakan footer.php -->
+    </section>
+    <?php endif; ?>
+
+    <!-- 404 Section (If Page Not Found) -->
+    <?php if (!in_array($request_uri, ['/', '/about', '/produk', '/contact'])): ?>
+    <section class="error">
+        <h2>404 - Page Not Found</h2>
+        <p>Sorry, the page you are looking for does not exist. Please check the URL or go back to the <a href="/">home page</a>.</p>
+    </section>
+    <?php endif; ?>
+
+    <!-- Footer Section -->
     <footer>
-    
         <link rel="stylesheet" href="./index_files/footer.css"> <!-- Menambahkan link ke footer.css -->
-    
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-left">
-                <h3>PT. Arya Cakra Mahkota</h3>
-                <p>Hotel Bintang Wisata Mandiri Building 1st Floor, Seroja – Jl. Raden Saleh, Cikini, Jakarta Pusat</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>PT. Arya Cakra Mahkota</h3>
+                    <p>Hotel Bintang Wisata Mandiri Building 1st Floor, Seroja – Jl. Raden Saleh, Cikini, Jakarta Pusat</p>
+                </div>
+                <div class="footer-right">
+                    <h4>Alamat Kantor</h4>
+                    <p>Hotel Bintang Wisata Mandiri Building 1st Floor, Seroja – Jl. Raden Saleh, Cikini, Jakarta Pusat</p>
+                    <h4>Telepon</h4>
+                    <p>021 - 392 - 2566</p>
+                    <h4>Handphone</h4>
+                    <p>0811 - 8129 - 6000</p>
+                    <h4>Email</h4>
+                    <p><a href="mailto:aryacakramahkota@gmail.com">aryacakramahkota@gmail.com</a></p>
+                    <p><a href="mailto:cakramahkota168@gmail.com">cakramahkota168@gmail.com</a></p>
+                </div>
             </div>
-            <div class="footer-right">
-                <h4>Alamat Kantor</h4>
-                <p>Hotel Bintang Wisata Mandiri Building 1st Floor, Seroja – Jl. Raden Saleh, Cikini, Jakarta Pusat</p>
-                <h4>Telepon</h4>
-                <p>021 - 392 - 2566</p>
-                <h4>Handphone</h4>
-                <p>0811 - 8129 - 6000</p>
-                <h4>Email</h4>
-                <p><a href="mailto:aryacakramahkota@gmail.com">aryacakramahkota@gmail.com</a></p>
-                <p><a href="mailto:cakramahkota168@gmail.com">cakramahkota168@gmail.com</a></p>
+            <div class="footer-bottom">
+                <p>Copyright © 2020. PT. Arya Cakra Mahkota All rights reserved.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>Copyright © 2020. PT. Arya Cakra Mahkota All rights reserved.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
+</body>
+</html>
 
-</body></html>
+<?php
+// Flush the output buffer if started
+ob_end_flush();
+?>
