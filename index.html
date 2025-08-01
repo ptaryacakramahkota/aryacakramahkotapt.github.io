@@ -64,6 +64,22 @@ switch ($request_uri) {
             </div>
         </div>
     </header>
+    <main>
+        <?php
+        // Dynamically include sections based on route
+        if ($request_uri == '/') {
+            include 'home.php';
+        } elseif ($request_uri == '/about') {
+            include 'about.php';
+        } elseif ($request_uri == '/produk') {
+            include 'produk.php';
+        } elseif ($request_uri == '/contact') {
+            include 'contact.php';
+        } else {
+            include '404.php';
+        }
+        ?>
+    </main>
 
     <!-- Hero Section (Only for Home Page) -->
     <?php if ($request_uri == '/'): ?>
