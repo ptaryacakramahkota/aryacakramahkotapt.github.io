@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Arya Cakra Mahkota</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+
+    <!-- Menyertakan header dari header.html -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="assets/images/img (2).png" alt="Background Image">
+        </div>
+        <div class="hero-content">
+            <h1>Solusi Terbaik untuk Kebutuhan Jasa & Perdagangan Anda</h1>
+            <p>PT. Arya Cakra Mahkota telah dipercaya dalam berbagai produk berkualitas, berfokus pada strategi di Jakarta Pusat.</p>
+            <div class="hero-buttons">
+                <a href="tel:+62123456789" class="btn-hubungi">Hubungi Kami</a>
+                <a href="produk.html" class="btn-lebih-lanjut">Pelajari Lebih Lanjut</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section class="tentang-kami">
+        <div class="container">
+            <h2>Tentang PT. Arya Cakra Mahkota</h2>
+            <p>PT. Arya Cakra Mahkota adalah perusahaan yang bergerak di bidang jasa dan perdagangan, berlokasi di Hotel Bintang Wisata Mandiri Building, Lantai 1, Serio Jl. Raden Saleh, Cikini, Jakarta Pusat. Sejak awal berdiri, kami berkomitmen untuk memberikan layanan terbaik dan produk berkualitas tinggi kepada pelanggan di berbagai sektor industri.</p>
+            <a href="about.html" class="btn-lebih-lanjut">Lihat Tentang Kami</a>
+        </div>
+    </section>
+
+    <!-- Katalog Section -->
+    <section class="catalog">
+        <div class="container">
+            <h2>Katalog Produk</h2>
+            <p>Solusi terbaik untuk kebutuhan industri Anda, mulai dari alat berat, perlindungan kerja, hingga sistem perpipaan.</p>
+            <div class="catalog-items">
+                <div class="catalog-item">
+                    <img src="assets/images/img produk 1.png" alt="Heavy Equipment & Parts">
+                    <h3>Heavy Equipment & Parts</h3>
+                    <p>Ropes, chains, hoists, and other industrial equipment for construction and mining projects.</p>
+                    <a href="produk.html" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
+                </div>
+                <div class="catalog-item">
+                    <img src="assets/images/img produk 2.png" alt="Safety & Equipment">
+                    <h3>Safety & Equipment</h3>
+                    <p>Perlengkapan keselamatan seperti helm, pelindung tubuh, dan perlengkapan lainnya untuk proteksi di tempat kerja.</p>
+                    <a href="produk.html" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
+                </div>
+                <div class="catalog-item">
+                    <img src="assets/images/img produk 3.png" alt="Pipe & Fitting / Plates">
+                    <h3>Pipe & Fitting / Plates</h3>
+                    <p>Beragam pipa, fitting, dan plat yang digunakan untuk instalasi dan konstruksi industri.</p>
+                    <a href="produk.html" class="btn-lebih-lanjut">Lihat Lebih Banyak</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hubungi Kami Section -->
+    <section class="contact-us">
+        <div class="container">
+            <div class="contact-us-content">
+                <h2>Hubungi Kami</h2>
+                <p>Kami siap membantu Anda. Jangan ragu untuk menghubungi kami untuk informasi produk, konsultasi, atau penawaran kerja sama.</p>
+                <div class="contact-details">
+                    <p><strong>Alamat Kantor:</strong> Hotel Bintang Wisata Mandiri Building 1st Floor, Seroja – Jl. Raden Saleh, Cikini, Jakarta Pusat</p>
+                    <p><strong>Telepon:</strong> 021-3122-2566</p>
+                    <p><strong>Handphone:</strong> 0811-8129-6000</p>
+                    <p><strong>Email:</strong> <a href="mailto:aryacakramahkota@gmail.com">aryacakramahkota@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menyertakan footer dari footer.html -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Fungsi untuk memuat file HTML eksternal ke dalam elemen dengan id tertentu
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading the file:', error);
+                });
+        }
+
+        // Memuat header dari file header.html
+        loadHTML('header.html', 'header-container');
+
+        // Memuat footer dari file footer.html
+        loadHTML('footer.html', 'footer-container');
+    </script>
+
+</body>
+</html>

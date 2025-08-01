@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - PT. Arya Cakra Mahkota</title>
+    <link rel="stylesheet" href="assets/styles/tentang-kami.css"> <!-- Link ke CSS tentang kami -->
+</head>
+<body>
+    <!-- Menyertakan header menggunakan JavaScript -->
+    <div id="header-container"></div>
+
+    <!-- Tentang Kami Section -->
+    <section class="tentang-kami">
+        <div class="container">
+            <h1>Tentang Kami</h1>
+            <div class="content">
+                <p>PT. Arya Cakra Mahkota adalah perusahaan yang bergerak di bidang jasa dan perdagangan, berlokasi di Hotel Bintang Wisata Mandiri Building, Lantai 1, Seroja -1, Jl. Raden Saleh, Cikini, Jakarta Pusat. Sejak awal berdiri, kami berkomitmen untuk memberikan layanan terbaik dan produk berkualitas tinggi kepada pelanggan di berbagai sektor industri.</p>
+                
+                <h2>Visi</h2>
+                <p>Menjadi perusahaan jasa dan perdagangan terkemuka di Indonesia yang terpercaya, inovatif, dan berorientasi pada kepuasan pelanggan di berbagai sektor industri.</p>
+                
+                <h2>Misi</h2>
+                <ul>
+                    <li>Menyediakan layanan dan produk berkualitas tinggi yang sesuai dengan kebutuhan dan harapan pelanggan.</li>
+                    <li>Membangun hubungan jangka panjang yang profesional dengan mitra dan klien.</li>
+                    <li>Terus berinovasi dalam memberikan solusi terbaik di bidang jasa dan perdagangan.</li>
+                    <li>Menjaga integritas, kepercayaan, dan etika kerja dalam setiap aspek operasional perusahaan.</li>
+                    <li>Memberdayakan sumber daya manusia yang kompeten dan berdedikasi melalui pelatihan dan pengembangan berkelanjutan.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menyertakan footer menggunakan JavaScript -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Fungsi untuk memuat file HTML eksternal ke dalam elemen dengan id tertentu
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading the file:', error);
+                });
+        }
+
+        // Memuat header dari file header.html
+        loadHTML('header.html', 'header-container');
+
+        // Memuat footer dari file footer.html
+        loadHTML('footer.html', 'footer-container');
+    </script>
+</body>
+</html>

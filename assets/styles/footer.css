@@ -1,0 +1,61 @@
+/* Footer Styles */
+footer {
+    background-color: #f1c9d0; /* Soft pink */
+    padding: 40px 0;
+    color: #333;
+}
+
+footer .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+footer .footer-left, footer .footer-right {
+    width: 48%; /* Membagi dua kolom */
+}
+
+footer .footer-left h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+footer .footer-left p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+footer .footer-right h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+footer .footer-right p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+footer .footer-right a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer .footer-right a:hover {
+    text-decoration: underline;
+}
+
+footer .footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}

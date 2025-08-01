@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk - PT. Arya Cakra Mahkota</title>
+    <link rel="stylesheet" href="assets/styles/produk.css"> <!-- Link ke CSS produk -->
+</head>
+<body>
+    <!-- Menyertakan header menggunakan JavaScript -->
+    <div id="header-container"></div>
+
+    <!-- Produk Section -->
+    <section class="produk">
+        <div class="container">
+            <h2>Katalog</h2>
+            <!-- Kategori Produk -->
+            <div class="kategori">
+                <button class="btn" onclick="showProducts('valve')">Valve</button>
+                <button class="btn" onclick="showProducts('pipe')">Pipe & Fitting</button>
+                <button class="btn" onclick="showProducts('electric')">Electric</button>
+            </div>
+
+            <!-- List Produk -->
+            <div id="produk-list" class="produk-list">
+                <!-- Produk Valve -->
+                <div class="produk-item valve">
+                    <img src="assets/images/Lined Valve.png" alt="Valve 1">
+                    <h3>Valve 1</h3>
+                    <p>Deskripsi singkat tentang Valve 1.</p>
+                </div>
+                <div class="produk-item valve">
+                    <img src="assets/images/subsea.png" alt="Valve 2">
+                    <h3>Valve 2</h3>
+                    <p>Deskripsi singkat tentang Valve 2.</p>
+                </div>
+                <div class="produk-item valve">
+                    <img src="assets/images/Manual Valves.png" alt="Valve 3">
+                    <h3>Valve 3</h3>
+                    <p>Deskripsi singkat tentang Valve 3.</p>
+                </div>
+                <!-- Produk Pipe & Fitting -->
+                <div class="produk-item pipe">
+                    <img src="assets/images/butt.png" alt="Pipe & Fitting 1">
+                    <h3>Pipe & Fitting 1</h3>
+                    <p>Deskripsi singkat tentang Pipe & Fitting 1.</p>
+                </div>
+                <div class="produk-item pipe">
+                    <img src="assets/images/forged.png" alt="Pipe & Fitting 2">
+                    <h3>Pipe & Fitting 2</h3>
+                    <p>Deskripsi singkat tentang Pipe & Fitting 2.</p>
+                </div>
+                <div class="produk-item pipe">
+                    <img src="assets/images/pipes.png" alt="Pipe & Fitting 3">
+                    <h3>Pipe & Fitting 3</h3>
+                    <p>Deskripsi singkat tentang Pipe & Fitting 3.</p>
+                </div>
+                <!-- Produk Electric -->
+                <div class="produk-item electric">
+                    <img src="assets/images/mcb.png" alt="Electric 1">
+                    <h3>Electric 1</h3>
+                    <p>Deskripsi singkat tentang Electric 1.</p>
+                </div>
+                <div class="produk-item electric">
+                    <img src="assets/images/mccb.png" alt="Electric 2">
+                    <h3>Electric 2</h3>
+                    <p>Deskripsi singkat tentang Electric 2.</p>
+                </div>
+                <div class="produk-item electric">
+                    <img src="assets/images/kabel.png" alt="Electric 3">
+                    <h3>Electric 3</h3>
+                    <p>Deskripsi singkat tentang Electric 3.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menyertakan footer menggunakan JavaScript -->
+    <div id="footer-container"></div>
+
+    <script src="produk.js"></script> <!-- Link ke JS produk -->
+
+    <script>
+        // Fungsi untuk memuat file HTML eksternal ke dalam elemen dengan id tertentu
+        function loadHTML(url, elementId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error loading the file:', error);
+                });
+        }
+
+        // Memuat header dari file header.html
+        loadHTML('header.html', 'header-container');
+
+        // Memuat footer dari file footer.html
+        loadHTML('footer.html', 'footer-container');
+    </script>
+</body>
+</html>

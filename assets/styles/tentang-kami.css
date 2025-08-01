@@ -1,0 +1,67 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Tentang Kami Section */
+.tentang-kami {
+    padding: 40px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tentang-kami h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Content Styling */
+.tentang-kami .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.tentang-kami p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.tentang-kami h2 {
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tentang-kami ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tentang-kami ul li {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .tentang-kami h1 {
+        font-size: 2em;
+    }
+
+    .tentang-kami .content {
+        padding: 0 15px;
+    }
+}

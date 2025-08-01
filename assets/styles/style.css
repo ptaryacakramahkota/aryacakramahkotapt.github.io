@@ -1,0 +1,244 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: #f1c9d0; /* Soft Pink */
+    padding: 20px 0;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.contact-btn .btn-hubungi {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 20px;
+    max-width: 700px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.hero-buttons .btn-lebih-lanjut {
+    background-color: #f1c9d0; /* Soft pink */
+}
+
+.hero-buttons .btn-hubungi:hover,
+.hero-buttons .btn-lebih-lanjut:hover {
+    background-color: #45a049;
+}
+
+/* Tentang Kami Section */
+.tentang-kami {
+    padding: 60px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.tentang-kami h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.tentang-kami p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.tentang-kami .btn-lebih-lanjut {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Katalog Section */
+.catalog {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.catalog h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.catalog-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.catalog-item {
+    background-color: white;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.catalog-item:hover {
+    transform: translateY(-10px);
+}
+
+.catalog-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.catalog-item h3 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.catalog-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.catalog-item a {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hubungi Kami Section */
+/* Hubungi Kami Section */
+.contact-us {
+    padding: 60px 0;
+    background-image: url('assets\images\img (2).png'); /* Gambar latar belakang */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.contact-us-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Menambahkan latar belakang transparan agar teks lebih terbaca */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-us h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contact-us p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    font-size: 16px;
+    color: #f1f1f1; /* Warna teks untuk detail kontak */
+    line-height: 1.6;
+}
+
+.contact-details a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
