@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/about", "destination": "/index.php" },
-    { "source": "/contact", "destination": "/index.php" },
-    { "source": "/produk", "destination": "/index.php" },
-    { "source": "/:path*", "destination": "/index.php" }
-  ]
-}
